@@ -11,6 +11,25 @@ function App() {
   const [id7, setId7] = useState("zinc")
   const [id8, setId8] = useState("zinc")
 
+  const turnToOrange = async () => {
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    for (let i = 0; i < order.length; ++i) {
+      switch (order[i]) {
+        case 1: setId1("orange"); break;
+        case 2: setId2("orange"); break;
+        case 3: setId3("orange"); break;
+        case 4: setId4("orange"); break;
+        case 5: setId5("orange"); break;
+        case 6: setId6("orange"); break;
+        case 7: setId7("orange"); break;
+        case 8: setId8("orange"); break;
+        default: break;
+      }
+      await delay(200)
+    }
+    setOrder([]);
+  };
+  
   
   return (
     <>
@@ -67,7 +86,7 @@ function App() {
             </div>
             <div 
               className={`bg-red-400 rounded-sm  p-6 text-center cursor-pointer `}
-              onClick={ () => {  }}
+              onClick={ () => { turnToOrange() }}
             >
               9
             </div>
